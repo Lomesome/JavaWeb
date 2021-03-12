@@ -7,7 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<% String path = request.getContextPath();
+<%
+    String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
@@ -23,6 +24,26 @@
 </head>
 
 <body>
+<%
+    String username="";
+    String password="";
+    Cookie [] cookies=request.getCookies();
+    if(cookies!=null){
+        for(Cookie cookie:cookies){
+            if(cookie.getName().equals("user")){
+                username=cookie.getValue().split("-")[0];
+                password=cookie.getValue().split("-")[1];
+            }
+        }
+    }else{
+        out.println("null");
+    }
+    //判断记住密码复选框的状态
+    String check="";
+    if(!username.equals("")&&!password.equals("")){
+        check = "checked";
+    }
+%>
 <a href="login.jsp">
     <h1>
         <img src="<%=basePath%>/Experiment2/imgs/logo.png" alt="">
@@ -68,17 +89,16 @@
                 </h3>
             </div>
             <div class="username">
-                <input type="text" name="account" placeholder="帐号">
+                <input type="text" name="account" value="<%=username%>" placeholder="帐号">
             </div>
             <div class="userpaw">
-                <input type="password" name="password" placeholder="密码">
+                <input type="password" name="password" value="<%=password%>" placeholder="密码">
             </div>
             <div class="register">
                 <button type="submit" onclick="">立即登录</button>
             </div>
-            <div class="agree">
-                <input type="checkbox" style="width: 15px
-                    ;height: 15px;" checked="checked"><label>我已阅读并同意相关服务条款和隐私政策</label>
+            <div class="agree" style="float: right">
+                <input type="checkbox" name="remeber" value="remeber" style="width: 15px;height: 15px;" <%=check%>><label>记住密码</label>
             </div>
         </form>
     </div>
