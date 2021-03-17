@@ -35,8 +35,6 @@
                 password=cookie.getValue().split("-")[1];
             }
         }
-    }else{
-        out.println("null");
     }
     //判断记住密码复选框的状态
     String check="";

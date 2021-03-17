@@ -14,7 +14,6 @@
     <%
         String username = "Lomesome";
         request.setAttribute("username", username);
-        response.setHeader("Refresh", "3");
         response.sendRedirect("target.jsp");
     %>
 </body>
