@@ -79,7 +79,7 @@
 </div>
 <div class="main-wraper">
     <div class="main">
-        <form method="post" action="login_process.jsp" id="test_form" class="form">
+        <form method="post" action="checklogin.jsp" id="test_form" class="form">
             <div class="title">
                 <h2>欢迎登录UCM</h2>
                 <h3>
