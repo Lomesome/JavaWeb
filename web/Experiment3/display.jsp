@@ -40,7 +40,6 @@
         }
         sqlHelper.close();
     %>
-
 </table>
 </body>
 </html>
