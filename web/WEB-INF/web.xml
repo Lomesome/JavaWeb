@@ -7,12 +7,157 @@
     <welcome-file-list>
         <welcome-file>/Experiment3/login.jsp</welcome-file>
     </welcome-file-list>
-    <error-page>
-        <error-code>404</error-code>
-        <location>/Experiment1/404.jsp</location>
-    </error-page>
-    <error-page>
-        <error-code>500</error-code>
-        <location>/Experiment1/500.jsp</location>
-    </error-page>
+<!--    <error-page>-->
+<!--        <error-code>404</error-code>-->
+<!--        <location>/Experiment1/404.jsp</location>-->
+<!--    </error-page>-->
+<!--    <error-page>-->
+<!--        <error-code>500</error-code>-->
+<!--        <location>/Experiment1/500.jsp</location>-->
+<!--    </error-page>-->
+
+    <servlet>
+        <servlet-name>MyGenericServlet</servlet-name>
+        <servlet-class>servlets.MyGenericServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyGenericServlet</servlet-name>
+        <url-pattern>/MyGenericServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MyHttpServlet</servlet-name>
+        <servlet-class>servlets.MyHttpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyHttpServlet</servlet-name>
+        <url-pattern>/MyHttpServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CheckloginServlet</servlet-name>
+        <servlet-class>servlets.CheckloginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckloginServlet</servlet-name>
+        <url-pattern>/CheckloginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CountServlet</servlet-name>
+        <servlet-class>servlets.CountServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CountServlet</servlet-name>
+        <url-pattern>/CountServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MessageServlet</servlet-name>
+        <servlet-class>servlets.MessageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MessageServlet</servlet-name>
+        <url-pattern>/MessageServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>servlets.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/HelloServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InitServlet</servlet-name>
+        <servlet-class>servlets.InitServlet</servlet-class>
+        <init-param>
+            <param-name>driver</param-name>
+            <param-value>com.mysql.cj.jdbc.Driver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:mysql://localhost:3306/javaweb</param-value>
+        </init-param>
+        <init-param>
+            <param-name>user</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>Lh1124015891</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InitServlet</servlet-name>
+        <url-pattern>/InitServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>JDBCServlet</servlet-name>
+        <servlet-class>servlets.JDBCServlet</servlet-class>
+        <init-param>
+            <param-name>driver</param-name>
+            <param-value>com.mysql.cj.jdbc.Driver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:mysql://localhost:3306/javaweb</param-value>
+        </init-param>
+        <init-param>
+            <param-name>user</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>Lh1124015891</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JDBCServlet</servlet-name>
+        <url-pattern>/JDBCServlet</url-pattern>
+    </servlet-mapping>
+
+
+<!--    <filter>-->
+<!--        <filter-name>TestFilter1</filter-name>-->
+<!--        <filter-class>filters.TestFilter1</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>TestFilter1</filter-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--    </filter-mapping>-->
+
+<!--    <filter>-->
+<!--        <filter-name>TestFilter2</filter-name>-->
+<!--        <filter-class>filters.TestFilter2</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>TestFilter2</filter-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--    </filter-mapping>-->
+
+<!--    <filter>-->
+<!--        <filter-name>UserAttributeFilter</filter-name>-->
+<!--        <filter-class>filters.UserAttributeFilter</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>UserAttributeFilter</filter-name>-->
+<!--        <url-pattern>/Experiment5/index.jsp</url-pattern>-->
+<!--        <url-pattern>/Experiment5/indexadmin.jsp</url-pattern>-->
+<!--    </filter-mapping>-->
+
+<!--    <filter>-->
+<!--        <filter-name>UserPermissionsFilter</filter-name>-->
+<!--        <filter-class>filters.UserPermissionsFilter</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>UserPermissionsFilter</filter-name>-->
+<!--        <url-pattern>/Experiment5/index.jsp</url-pattern>-->
+<!--        <url-pattern>/Experiment5/indexadmin.jsp</url-pattern>-->
+<!--    </filter-mapping>-->
+
 </web-app>

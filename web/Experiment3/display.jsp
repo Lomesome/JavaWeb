@@ -11,7 +11,11 @@
 <html>
 <head>
     <title>Title</title>
-</head>
+</head
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <body>
 <table align="center">
     <caption>欢迎给老师投票</caption>
@@ -34,7 +38,7 @@
             <td><%=teacherno%></td>
             <td><%=teachername%></td>
             <td><img src="imgs/bar.jpg" width="<%=vote%>" height="10"> <%=vote%> </td>
-            <td><a href="vote.jsp?teacherno=<%=teacherno%>">投票</a> </td>
+            <td><a href="javascript:;" onclick="vote(<%=teacherno%>)">投票</a> </td>
         </tr>
     <%
         }
@@ -42,4 +46,26 @@
     %>
 </table>
 </body>
+<script src="<%=basePath%>Experiment3/js/jquery.js"></script>
+<script>
+    function vote(teacherno){
+        console.log(teacherno)
+        $.ajax({
+            cache: false,
+            type: 'post',
+            url: "vote.jsp?teacherno="+teacherno,
+            async: true,
+            success: function (data) {
+                var div = document.createElement('div')
+                div.innerHTML = data
+                if (div.getElementsByClassName("code").item(0).innerHTML == "success"){
+                    location.reload();
+                }
+                else {
+                    alert("投票次数受限");
+                }
+            }
+        });
+    }
+</script>
 </html>

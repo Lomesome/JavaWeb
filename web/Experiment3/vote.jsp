@@ -14,12 +14,22 @@
 </head>
 <body>
     <%
-        String teacherno = request.getParameter("teacherno");
-        SqlHelper sqlHelper = new SqlHelper();
-        String sql = "update teachervote set num = num + 1 where id = ?";
-        sqlHelper.changeMsg(sql, new String[]{teacherno});
-        sqlHelper.close();
+        Integer count = (Integer) application.getAttribute(request.getRemoteAddr());
+        if (count == null){
+            application.setAttribute(request.getRemoteAddr(), 0);
+            count = 0;
+        }
+        if ( count < 10) {
+            application.setAttribute(request.getRemoteAddr(), count + 1);
+            String teacherno = request.getParameter("teacherno");
+            SqlHelper sqlHelper = new SqlHelper();
+            String sql = "update teachervote set num = num + 1 where id = ?";
+            sqlHelper.changeMsg(sql, new String[]{teacherno});
+            sqlHelper.close();
+            out.print("<div class=\"code\" value=\"success\">success</div>");
+    }else {
+            out.print("<div class=\"code\" value=\"error\">error</div>");
+    }
     %>
-    <jsp:forward page="display.jsp"></jsp:forward>
 </body>
 </html>

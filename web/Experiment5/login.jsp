@@ -18,9 +18,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UCM</title>
-    <link rel="shortcut icon" href="<%=basePath%>/Experiment3/imgs/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="<%=basePath%>/Experiment3/iconfont/iconfont.css">
-    <link rel="stylesheet" href="<%=basePath%>/Experiment3/css/UCM.css">
+    <link rel="shortcut icon" href="<%=basePath%>/Experiment5/imgs/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="<%=basePath%>/Experiment5/iconfont/iconfont.css">
+    <link rel="stylesheet" href="<%=basePath%>/Experiment5/css/UCM.css">
 </head>
 
 <body>
@@ -44,25 +44,25 @@
 %>
 <a href="login.jsp">
     <h1>
-        <img src="<%=basePath%>/Experiment3/imgs/logo.png" alt="">
+        <img src="<%=basePath%>/Experiment5/imgs/logo.png" alt="">
         <p style="color: black">UCM</p>
     </h1>
 </a>
-<script src="<%=basePath%>/Experiment3/js/jquery.js"></script>
+<script src="<%=basePath%>/Experiment5/js/jquery.js"></script>
 <div class="lunbo">
-    <div class="side" style="background-image: url('<%=basePath%>/Experiment3/imgs/banner12.jpg'););">
+    <div class="side" style="background-image: url('<%=basePath%>/Experiment5/imgs/banner12.jpg'););">
     </div>
-    <div class="side" style="background-image: url('<%=basePath%>/Experiment3/imgs/banner22.jpg'););">
+    <div class="side" style="background-image: url('<%=basePath%>/Experiment5/imgs/banner22.jpg'););">
     </div>
-    <div class="side" style="background-image: url('<%=basePath%>/Experiment3/imgs/banner32.jpg'););">
+    <div class="side" style="background-image: url('<%=basePath%>/Experiment5/imgs/banner32.jpg'););">
     </div>
-    <div class="side" style="background-image: url('<%=basePath%>/Experiment3/imgs/banner42.jpg'););">
+    <div class="side" style="background-image: url('<%=basePath%>/Experiment5/imgs/banner42.jpg'););">
     </div>
 </div>
 <div class="top">
     <ul>
         <li class="vip">
-            <img src="<%=basePath%>/Experiment3/imgs/logo.png" alt="">
+            <img src="<%=basePath%>/Experiment5/imgs/logo.png" alt="">
             <div>UCM靓号</div>
         </li>
         <li>
@@ -90,24 +90,28 @@
                     <span>免费靓号</span>
                 </h3>
             </div>
-            <div class="username">
+            <div class="username in">
                 <input type="text" name="account" value="<%=username%>" placeholder="帐号">
             </div>
-            <div class="userpaw">
+            <div class="userpaw in">
                 <input type="password" name="password" value="<%=password%>" placeholder="密码">
             </div>
-            <div class="register">
+            <div class="register in">
                 <button type="submit" onclick="">立即登录</button>
             </div>
+            <div class="perm">
+                <input type="radio" value="root" name="perm"><label>管理员</label>
+                <input type="radio" value="user" name="perm" checked> <label>普通用户</label>
+            </div>
             <div class="find-password-"  style="float: left"><label onclick="findpassword()">找回密码</label></div>
-            <div class="agree" style="float: right">
+            <div class="agree in" style="float: right">
                 <input type="checkbox" name="remeber" value="remeber" style="width: 15px;height: 15px;" <%=check%>><label>记住密码</label>
             </div>
         </form>
     </div>
 </div>
 </body>
-<script src="<%=basePath%>/Experiment3/js/ucm.js"></script>
+<script src="<%=basePath%>/Experiment5/js/ucm.js"></script>
 <script>
     function findcount(){
         var tmpHtml = ""

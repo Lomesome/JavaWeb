@@ -13,9 +13,9 @@ public class SqlHelper {
     private Statement st = null;
     private ResultSet rs = null;
     private String driver = "com.mysql.cj.jdbc.Driver";
-    private String url = "jdbc:mysql://rm-2ze5kgn8oy5ke9ig8so.mysql.rds.aliyuncs.com:3306; DatabaseName=user";
-    private String username = "user_message";
-    private String password = "Abc123456";
+    private String url = "jdbc:mysql://localhost:3306/javaweb";
+    private String username = "root";
+    private String password = "Lh1124015891";
 
     public String getDriver() {
         return driver;
@@ -73,12 +73,15 @@ public class SqlHelper {
     public SqlHelper() {
         try {
             // 连接驱动
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(driver);
             // 获取连接
-            ct = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaweb?user=root&password=Lh1124015891&useUnicode=true&serverTimezone=GMT"); //建立数据库连接，获得连接对象conn
+            ct = DriverManager.getConnection(url, username, password); //建立数据库连接，获得连接对象conn
+            System.out.println("数据库连接成功");
         } catch (ClassNotFoundException e) {
+            System.out.println("数据库连接失败");
             e.printStackTrace();
         } catch (SQLException e) {
+            System.out.println("数据库连接失败");
             e.printStackTrace();
         }
     }
@@ -113,7 +116,7 @@ public class SqlHelper {
         return rs;
     }
 
-    // 查询功能
+    // 添加功能
     public void addAccount(String sql, String[] paras) {
         try {
             // 创建PreparedStatement
@@ -128,6 +131,17 @@ public class SqlHelper {
             e.printStackTrace();
         }
     }
+
+    public void addAccount(String sql) {
+        try {
+            // 创建Statement
+            st = ct.createStatement();
+            st.executeUpdate(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void changeMsg(String sql, String[] paras)  {
         try {
@@ -162,5 +176,9 @@ public class SqlHelper {
         } catch (Exception e2) {
             e2.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        SqlHelper sqlHelper = new SqlHelper();
     }
 }

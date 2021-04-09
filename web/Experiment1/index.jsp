@@ -15,11 +15,11 @@
   %>
   <link rel="stylesheet" href="<%=basePath%>/css/style.css">
   <body>
-      <jsp:include page="/html/head.html"></jsp:include>
+      <jsp:include page="html/head.html"></jsp:include>
       <jsp:forward page="main.jsp">
         <jsp:param name="id" value=" form index.html"/>
       </jsp:forward>
-      <jsp:include page="/html/body1.html"></jsp:include>
-      <jsp:include page="/html/footer.html"></jsp:include>
+      <jsp:include page="html/body1.html"></jsp:include>
+      <jsp:include page="html/footer.html"></jsp:include>
   </body>
 </html>
