@@ -11,14 +11,14 @@
     <title>Title</title>
 </head>
 <body>
-    <jsp:useBean id="book" scope="page" class="beans.Book"></jsp:useBean>
-    <jsp:setProperty name="book" property="id" value="book001"/>
-    <jsp:setProperty name="book" property="name" value="百年孤独"/>
-    <jsp:setProperty name="book" property="price" value="50.0"/>
-    <jsp:setProperty name="book" property="num" value="20"/>
-    编号: <jsp:getProperty name="book" property="id"/><br>
-    名称: <jsp:getProperty name="book" property="name"/><br>
-    价格: <jsp:getProperty name="book" property="price"/><br>
-    数量: <jsp:getProperty name="book" property="num"/> 本<br>
+    <jsp:useBean id="book" scope="page" class="vo.Book"></jsp:useBean>
+    <jsp:setProperty name="book" property="bookno" value="book001"/>
+    <jsp:setProperty name="book" property="bookname" value="百年孤独"/>
+    <jsp:setProperty name="book" property="bookprice" value="50.0"/>
+    <jsp:setProperty name="book" property="booknumber" value="20"/>
+    编号: <jsp:getProperty name="book" property="bookno"/><br>
+    名称: <jsp:getProperty name="book" property="bookname"/><br>
+    价格: <jsp:getProperty name="book" property="bookprice"/><br>
+    数量: <jsp:getProperty name="book" property="booknumber"/> 本<br>
 </body>
 </html>

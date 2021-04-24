@@ -1,6 +1,6 @@
 package servlets;
 
-import beans.Book;
+import vo.Book;
 import dao.BookDao;
 
 import javax.servlet.ServletException;

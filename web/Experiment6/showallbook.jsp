@@ -7,8 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.HashMap" %>
-<%@ page import="beans.Book" %>
-<%@ page import="java.util.Map" %>
+<%@ page import="vo.Book" %>
 <html>
 <head>
     <title>Title</title>

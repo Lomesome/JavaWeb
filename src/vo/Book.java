@@ -1,4 +1,4 @@
-package beans;
+package vo;
 
 import java.io.Serializable;
 

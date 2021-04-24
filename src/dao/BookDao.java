@@ -1,7 +1,6 @@
 package dao;
 
-import beans.Book;
-
+import vo.Book;
 import java.sql.*;
 import java.util.HashMap;
 
@@ -10,11 +9,8 @@ public class BookDao {
     public Connection getConnection(String driver, String url, String user, String password) {
         Connection ct = null;
         try {
-            // 连接驱动
-            Class.forName(driver);
-            // 获取连接
+            Class.forName(driver); // 连接驱动
             ct = DriverManager.getConnection(url, user, password); //建立数据库连接，获得连接对象conn
-
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("数据库连接失败");
             e.printStackTrace();
@@ -45,12 +41,10 @@ public class BookDao {
     }
 
     // 关闭数据库资源
-
     public void close(Connection ct) {
-        // 关闭资源
         try {
             if (ct != null) {
-                ct.close();
+                ct.close();  // 关闭资源
             }
         } catch (Exception e) {
             e.printStackTrace();
